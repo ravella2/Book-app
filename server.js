@@ -95,7 +95,7 @@ app.put('/api/books/:id', function(req,res){
 app.delete('/api/books/:id', function (req, res) {
   var bookId = req.params.id;
 
-  db.Book.deleteOne({_id: bookId}, function(err, deletedBook) {
+  db.Book.findByIdAndDelete({_id: bookId}, function(err, deletedBook) {
     if (err){
       console.log(err);
     }
